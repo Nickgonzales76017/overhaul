@@ -1,16 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Nav_Container />
+  <router-view />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Nav_Container from './components/Navz.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+
+    Nav_Container,
+
+},
+
 }
 </script>
 
@@ -21,6 +25,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+#container-lottie{
+  position: fixed;
+  width: 100px;
+  height: 100px;
 }
 </style>
