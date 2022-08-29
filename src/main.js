@@ -6,14 +6,15 @@ import LottieAnimation from "lottie-web-vue"
 import 'bootstrap/dist/css/bootstrap.css'
 import BootstrapVue3 from 'bootstrap-vue-3'
 import { plugin, defaultConfig } from '@formkit/vue'
-// import { generateClasses } from '@formkit/themes'
-import router from './router' 
+ import { generateClasses } from '@formkit/themes'
+import router from './router'
+import 'tw-elements';
 import './styles/app.css'; // Here
-// import theme from '../theme'
-
-// createApp(App).use(LottieAnimation).use(ElementPlus).use(BootstrapVue3).use(router).use(plugin, defaultConfig({
-//     config: {
-//       classes: generateClasses(theme),
-//     },
-//   })).mount('#app')
-createApp(App).use(LottieAnimation).use(ElementPlus).use(BootstrapVue3).use(router).use(plugin, defaultConfig).mount('#app')
+import './assets/tailwind.css'
+import '@/assets/tailwind.css';
+ import theme from '../theme'
+createApp(App).use(LottieAnimation).use(ElementPlus).use(BootstrapVue3).use(router).use(plugin, defaultConfig({
+    config: {
+      classes: generateClasses(theme),
+     },
+ })).mount('#app')

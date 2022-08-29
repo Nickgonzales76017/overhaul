@@ -4,16 +4,15 @@
 const textClassification = {
   label: 'block mb-1 font-bold text-sm formkit-invalid:text-red-500',
   inner: `
-    max-w-md
     border
-    border-gray-400
+    border-black
     formkit-invalid:border-red-500
     rounded-lg mb-1
     overflow-hidden
     focus-within:border-blue-500
   `,
   input:
-    'w-full h-10 px-3 border-none text-base text-gray-700 placeholder-gray-400',
+    'w-full h-10 px-3 border border-black text-base text-gray-700 placeholder-gray-400 ',
 }
 const boxClassification = {
   fieldset: 'max-w-md border border-gray-400 rounded-md px-2 pb-1',
@@ -27,7 +26,7 @@ const boxClassification = {
 const buttonClassification = {
   wrapper: 'mb-1',
   input:
-    'bg-blue-500 hover:bg-blue-700 text-white text-sm font-normal py-3 px-5 rounded',
+    'bg-pink-400 hover:bg-pink-700 text-white text-sm font-normal py-3 px-5 rounded',
 }
 
 // export our definitions using our above
