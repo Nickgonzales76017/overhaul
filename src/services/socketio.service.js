@@ -3,7 +3,9 @@ import { io } from 'socket.io-client';
 class SocketioService {
   socket = io(process.env.VUE_APP_SOCKET_ENDPOINT);
   user_list;
-  constructor() {}
+  constructor() {
+    console.log('test')
+  }
 
   setupSocketConnection(username) {
     //this.socket = io(process.env.VUE_APP_SOCKET_ENDPOINT);
@@ -25,6 +27,18 @@ class SocketioService {
         console.log(recievedDbUpdate);
     });
   }
+  // Handle message receive event
+subscribeToMessages(cb) {
+  if (!this.socket) return(true);
+  this.socket.on('send-nickname', userList => {
+    console.log('userlist event received!');
+    return cb(null, userList);
+  });
+}
+  
+sendMessage( cb) {
+  if (this.socket) this.socket.emit('listAllOnline', 'id', cb);
+}
 
   listAllOnline() {
     this.user_list = []
@@ -32,12 +46,14 @@ class SocketioService {
     this.socket.emit('listAllOnline', 'id');
     this.socket.on('send-nickname', (userList) => {
       //console.log(userList)
-      userList.map(x => this.user_list.push({userID: x.userID, username: x.username}));
-      //this.user_list[userList.userID] = userList.username;
+      
+      this.user_list.push(userList);
+      console.log(userList)
+      console.log(this.user_list)
       
     });
-  console.log(this.user_list);
-  return this.user_list;
+    return this.user_list;
+
   }
 
   

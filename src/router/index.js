@@ -6,9 +6,21 @@ import ProfilePage from "@/views/Profile.vue";
 import OnlineMembers from "@/views/OnlineMembers.vue";
 import MemberPage from "@/views/Member.vue";
 import FormTest from "@/views/FormTest.vue";
+//import axios from 'axios'
+// const views = {
+//   'Home': Home,
+//   About: About,
+//   DbClient: DbClient,
+//   OnlineMembers: OnlineMembers,
+//   MemberPage: MemberPage,
+//   FormTest: FormTest,
+// };
+//var url = process.env.VUE_APP_STRAPI_ENDPOINT+'/api/routes?populate=*'
+
+
 const routes = [
   {
-    path: "/home",
+    path: "/",
     name: "Home",
     component: Home,
   },
@@ -49,9 +61,16 @@ const routes = [
   },
 ];
 
+      //console.log(url)
+
+
+
 const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+console.log(router)
 
+
+console.log('race')
 export default router;

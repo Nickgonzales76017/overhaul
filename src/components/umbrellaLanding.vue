@@ -50,16 +50,12 @@ export default {
 }
 </script>
 <template>
-  <div >
-<div class="text-center" v-for="user in post"  v-bind:key="user.id">
-  <img
-    src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp"
-    class="rounded-full w-32 mb-4 mx-auto"
-    alt="Avatar"
-  />
-  <h5 class="text-xl font-medium leading-tight mb-2">{{ user.id + ': ' + user.fname}}</h5>
-  <p class="text-gray-500">{{user.email}}</p>
-  <p class="text-gray-500">{{user.userID}}</p>
+<div class="grid grid-flow-row-dense grid-cols-3 grid-rows-3 ...">
+  <div class="col-span-2">01</div>
+  <div class="col-span-2">02</div>
+  <div>03</div>
+  <div>04</div>
+  <div>05</div>
 </div>
-</div>
+
 </template>

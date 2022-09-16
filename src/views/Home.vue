@@ -1,16 +1,27 @@
 <template>
-  <div class="common-layout">
-    <el-container>
-      <el-header>Header</el-header>
-      <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-container>
-          <el-main>Main</el-main>
-          <el-footer>Footer</el-footer>
-        </el-container>
-      </el-container>
-    </el-container>
+<div class="grid grid-flow-row auto-rows-max">
+  <div>
+    <div class="columns-2">
+      <div class="w-1/2">
+        <lottie-animation 
+          ref="anim" 
+          :animationData="require('@/assets/umbrellaLanding.json')"
+          :speed="1"
+          @mouseover="play"
+        />
+      </div>
+      <div class="w-1/2">
+        <lottie-animation 
+          ref="anim" 
+          :animationData="require('@/assets/logoLanding.json')"
+          :speed="1"
+          @mouseover="play"
+        />
+      </div>
+    </div> 
+      
   </div>
+</div>
 </template>
 
 <script>
